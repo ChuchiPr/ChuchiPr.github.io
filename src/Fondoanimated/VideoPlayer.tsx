@@ -15,13 +15,14 @@ const MatrixEffect: React.FC = () => {
 
     const characters = 'ChuchiPG882KPG20';
     const fontSize = 16;
-    const columnsCount = columns / fontSize;
-    const drops: number[] = Array.from({ length: columnsCount }).fill(0);
+    const columnsCount = Number(columns) / fontSize; 
+    const drops: number[] = Array.from({ length: columnsCount as number }).fill(0);
+
 
     function drawMatrix() {
         ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'; 
         ctx.fillRect(0, 0, columns, rows);
-
+        
         ctx.fillStyle = '#1447e6'; 
         ctx.font = `${fontSize}px monospace`;
 
