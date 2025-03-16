@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/ui/navbar/navbar";
 import SideBar from "@/ui/sidebar.tsx/sidebar";
 import { motion } from "framer-motion";
+import VideoPlayer from "@/Fondoanimated/VideoPlayer";
 
 export default function RootLayout({
   children,
@@ -14,6 +15,12 @@ export default function RootLayout({
       <body className="bg-gray-50">
         <div className="flex h-screen overflow-hidden">
           <SideBar />
+          <VideoPlayer>
+            
+          </VideoPlayer>
+
+
+
           <motion.main 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}

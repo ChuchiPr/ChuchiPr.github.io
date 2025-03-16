@@ -43,14 +43,14 @@ export default function Certificados() {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="flex-1 p-6 bg-gray-50 overflow-hidden"
+      className="flex-1 p-6 overflow-hidden"
     >
-      <section className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-6">
+      <section className="max-w-4xl mx-auto border-2 border-blue-700 bg-neutral-950/80 rounded-2xl shadow-lg p-6">
         <motion.h2 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl font-bold text-violet-700 mb-6"
+          className="text-3xl font-bold text-blue-700 mb-6"
         >
           Certificados
         </motion.h2>
@@ -60,7 +60,7 @@ export default function Certificados() {
             {certificates.map((cert, index) => (
               <motion.div
                 key={index}
-                className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+                className="border-2 border-blue-700 bg-neutral-950/80 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -69,7 +69,7 @@ export default function Certificados() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
-                  className="text-xl font-semibold text-gray-800 mb-2"
+                  className="text-xl font-semibold text-white mb-2"
                 >
                   {cert.titulo}
                 </motion.h3>
@@ -77,17 +77,17 @@ export default function Certificados() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
-                  className="flex items-center gap-2 text-violet-700 mb-3"
+                  className="flex items-center gap-2 text-blue-700 mb-3"
                 >
                   <span className="font-medium">{cert.institucion}</span>
-                  <span className="text-gray-400">•</span>
-                  <span className="text-gray-600">{cert.fecha}</span>
+                  <span className="text-gray-300">•</span>
+                  <span className="text-gray-300">{cert.fecha}</span>
                 </motion.div>
                 <motion.p 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
-                  className="text-gray-600 mb-4"
+                  className="text-gray-300 mb-4"
                 >
                   {cert.descripcion}
                 </motion.p>
@@ -95,7 +95,7 @@ export default function Certificados() {
                   href={cert.enlace}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-4 py-2 bg-violet-700 text-white rounded-lg hover:bg-violet-800 transition-colors duration-300"
+                  className="inline-block px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

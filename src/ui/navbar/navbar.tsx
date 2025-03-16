@@ -19,20 +19,20 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="text-xl p-4 font-bold text-violet-700 shadow-md bg-white m-4 md:m-8 rounded-2xl"
+      className="text-xl p-4 font-bold text-blue-700 shadow-md bg-teal  m-4 md:m-8 rounded-2xl border-2 border-blue-700 bg-neutral-950/80"
     >
       <div className="flex justify-between items-center">
         <motion.div
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 400 }}
         >
-          <Link href={"/"} className="p-2 text-black">
-            Vinn<span className="text-violet-700">Bonn</span>
+          <Link href={"/"} className="p-2 text-white">
+            Chuchi<span className="text-blue-700">PG</span>
           </Link>
         </motion.div>
 
         <button 
-          className="md:hidden text-violet-700 p-2"
+          className="md:hidden text-blue-700 p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -47,7 +47,7 @@ const Navbar = () => {
             >
               <Link 
                 href={enlace.url}
-                className="relative transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-300 before:absolute before:bg-violet-700 before:origin-center before:h-[2px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-violet-700 after:origin-center after:h-[2px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%] p-2"
+                className="text-white relative transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-300 before:absolute before:bg-blue-700 before:origin-center before:h-[2px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-blue-700 after:origin-center after:h-[2px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%] p-2"
               >
                 {enlace.texto}
               </Link>
@@ -59,7 +59,7 @@ const Navbar = () => {
           >
             <Link 
               href={"/contacto"} 
-              className="bg-violet-700 text-white p-2 rounded-3xl hover:bg-violet-900"
+              className="bg-blue-700 text-white p-2 rounded-3xl hover:bg-blue-900"
             >
               Contacto
             </Link>
@@ -86,7 +86,7 @@ const Navbar = () => {
                 <Link 
                   href={enlace.url}
                   onClick={() => setIsMenuOpen(false)}
-                  className="w-full block text-center py-2 hover:bg-violet-50 rounded-lg transition-colors"
+                  className="w-full block text-center py-2 hover:bg-blue-50 rounded-lg transition-colors"
                 >
                   {enlace.texto}
                 </Link>
@@ -100,7 +100,7 @@ const Navbar = () => {
               <Link 
                 href={"/contacto"}
                 onClick={() => setIsMenuOpen(false)}
-                className="bg-violet-700 text-white p-2 rounded-3xl hover:bg-violet-900 w-full text-center block"
+                className="bg-blue-700 text-white p-2 rounded-3xl hover:bg-blue-900 w-full text-center block"
               >
                 Contacto
               </Link>

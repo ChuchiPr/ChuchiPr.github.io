@@ -8,46 +8,46 @@ const SideBar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
-  // Check if we're on mobile when component mounts and when window resizes
+  
   useEffect(() => {
     const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 1024) // lg breakpoint
+      setIsMobile(window.innerWidth < 1024) 
     }
     
-    // Initial check
+    
     checkIfMobile()
     
-    // Add event listener for window resize
+    
     window.addEventListener('resize', checkIfMobile)
     
-    // Cleanup
+    
     return () => window.removeEventListener('resize', checkIfMobile)
   }, [])
 
   const socialLinks = [
-    { icon: <FaTiktok/>, url: 'https://www.tiktok.com/@vinnibombom'},
-    { icon: <FaGithub/>, url: 'https://github.com/Rinvinvin'},
-    { icon: <FaInstagram/>, url: 'https://www.instagram.com/vinnbon/'},
-    { icon: <FaLinkedin/>, url: 'https://linkedin.com/in/yourusername'},
+    { icon: <FaTiktok/>, url: 'https://www.tiktok.com/@chuchipr7'},
+    { icon: <FaGithub/>, url: 'https://github.com/ChuchiPr'},
+    { icon: <FaInstagram/>, url: 'https://www.instagram.com/chuchi0015/'},
+    { icon: <FaLinkedin/>, url: 'https://www.linkedin.com/in/mario-mu%C3%B1oz-928338347/'},
   ]
 
   return (
     <>
-      {/* Mobile toggle button - repositioned to bottom center */}
+      
       {isMobile && (
         <motion.button
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 bg-violet-700 text-white p-3 rounded-full shadow-xl lg:hidden flex items-center justify-center w-14 h-14"
+          className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 bg-blue-700 text-white p-3 rounded-full shadow-xl lg:hidden flex items-center justify-center w-14 h-14"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
           {isSidebarOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </motion.button>
-      )}
+      )},
       
-      {/* Sidebar overlay for mobile */}
+      
       <AnimatePresence>
         {isMobile && isSidebarOpen && (
           <motion.div 
@@ -61,7 +61,7 @@ const SideBar = () => {
         )}
       </AnimatePresence>
 
-      {/* Sidebar content - modified for bottom positioning on mobile */}
+      
       <AnimatePresence>
         {(!isMobile || (isMobile && isSidebarOpen)) && (
           <motion.div 
@@ -69,11 +69,11 @@ const SideBar = () => {
             animate={{ x: 0, y: 0 }}
             exit={isMobile ? { y: 500 } : { x: -300 }}
             transition={{ duration: 0.5, type: "spring", stiffness: 300, damping: 30 }}
-            className={`fixed lg:relative ${isMobile ? 'h-auto max-h-[75vh] w-full bottom-0 left-0 rounded-t-[30px] shadow-2xl pb-20' : 'h-screen w-3/4 md:w-1/2 lg:w-1/4 top-0 left-0'} bg-white z-40 flex flex-col items-center justify-center ${isMobile ? 'px-6 pt-8 pb-20 overflow-auto' : 'p-4'}`}
+            className={`fixed lg:relative ${isMobile ? 'h-auto max-h-[75vh] w-full bottom-0 left-0 rounded-t-[30px] shadow-2xl pb-20' : 'h-screen w-3/4 md:w-1/2 lg:w-1/4 top-0 left-0'} bg-neutral-950/80 border-2 border-blue-700 z-40 flex flex-col items-center justify-center ${isMobile ? 'px-6 pt-8 pb-20 overflow-auto' : 'p-4'}`}
           >
-            {/* Mobile handle bar for better UX */}
+            
             {isMobile && (
-              <div className="w-16 h-1.5 bg-gray-300 rounded-full mb-6 -mt-2"></div>
+              <div className="w-16 h-1.5 bg-blue-500 rounded-full mb-6 -mt-2"></div>
             )}
         <motion.div 
           initial={{ scale: 0 }}
@@ -82,11 +82,11 @@ const SideBar = () => {
           className="relative"
         >
           <Image 
-            src="/foto.png" 
+            src="/Perfil.jpg" 
             alt="Foto de perfil" 
             width={350} 
             height={350} 
-            className="w-48 md:w-64 lg:w-80 h-auto rounded-full border-4 border-violet-700 shadow-lg hover:scale-105 transition-transform duration-300"
+            className="w-20 md:w-34 lg:w-45 h-auto rounded-full border-2 border-blue-700 shadow-lg hover:scale-105 transition-transform duration-300 bg-auto lg:h-85 bg-center bg-no-repeat"
           />
         </motion.div>
         <motion.div 
@@ -95,10 +95,10 @@ const SideBar = () => {
           transition={{ delay: 0.5 }}
           className="text-center space-y-2 md:space-y-3 mt-4 md:mt-6"
         >
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800">Angielina Soto</h1>
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">Vinn<span className="text-violet-700">Bonn</span></h2>
-          <p className="text-base md:text-lg lg:text-xl text-gray-600">
-            Estudiante de <span className="text-violet-700 font-semibold">Ingeniería de Sistemas</span>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">Mario Muñoz</h1>
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white">Chuchi<span className="text-blue-700">PG</span></h2>
+          <p className="text-base md:text-lg lg:text-xl text-white">
+            Estudiante de <span className="text-blue-700 font-semibold">Ingeniería de Sistemas</span>
           </p>
         </motion.div>
         <motion.div 
@@ -115,7 +115,7 @@ const SideBar = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-2xl md:text-3xl text-gray-700 hover:text-violet-700 transition-colors duration-300"
+              className="text-2xl md:text-3xl text-white hover:text-blue-700 transition-colors duration-300"
             >
               {link.icon}
             </motion.a>
@@ -127,11 +127,11 @@ const SideBar = () => {
           transition={{ delay: 0.9 }}
           className="text-center"
         >
-          <p className="text-sm text-gray-500 mt-4 md:mt-6">
-            Diseñado y Desarrollado por <a href="https://miguelvivar.github.io/" className="text-violet-700" target="_blank">Miguel Vivar</a>
+          <p className="text-sm text-white mt-4 md:mt-6">
+            FT. Diseñado y Desarrollado por <a href="https://miguelvivar.github.io/" className="text-blue-700" target="_blank">Miguel Vivar</a>
           </p>
-          <p className="text-sm text-gray-500 mt-4 md:mt-6">
-            &copy; {new Date().getFullYear()} VinnBonn. Todos los Derechos Reservados.
+          <p className="text-sm text-white mt-4 md:mt-6">
+            &copy; {new Date().getFullYear()} ChuchiPG. Todos los Derechos Reservados.
           </p>
         </motion.footer>
           </motion.div>

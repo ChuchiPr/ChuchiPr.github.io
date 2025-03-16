@@ -32,10 +32,10 @@ const Skills = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="flex-1 p-6 bg-gray-50 h-screen overflow-hidden"
+      className="flex-1 p-6 h-screen"
     >
-      <section className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-6">
-        <h2 className="text-3xl font-bold text-violet-700 mb-6">Habilidades Técnicas</h2>
+      <section className="max-w-4xl mx-auto rounded-2xl shadow-lg p-6 border-2 border-blue-700 bg-neutral-950/80">
+        <h2 className="text-3xl font-bold text-blue-700 mb-6">Habilidades Técnicas</h2>
         
         <div className="space-y-4 h-[calc(100%-4rem)] overflow-auto pr-2">
           {skills.map((skill, index) => (
@@ -44,15 +44,15 @@ const Skills = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gray-50 p-4 rounded-xl"
+              className="p-4 rounded-xl border-2 border-blue-700"
             >
-              <div className="flex justify-between mb-2">
-                <span className="text-gray-700 font-medium">{skill.nombre}</span>
-                <span className="text-violet-700">{skill.porcentaje}%</span>
+              <div className="flex justify-between mb-2 ">
+                <span className="text-white font-medium ">{skill.nombre}</span>
+                <span className="text-blue-700">{skill.porcentaje}%</span>
               </div>
               <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                 <motion.div 
-                  className="h-full bg-violet-700 rounded-full"
+                  className="h-full bg-blue-700 rounded-full"
                   initial={{ width: 0 }}
                   animate={{ width: `${skill.porcentaje}%` }}
                   transition={{ 

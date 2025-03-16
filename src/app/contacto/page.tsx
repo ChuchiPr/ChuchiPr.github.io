@@ -24,10 +24,10 @@ export default function Contact() {
   }
 
   const socialLinks = [
-    { icon: <FaTiktok size={24} />, url: 'https://www.tiktok.com/@vinnibombom', label: 'TikTok' },
-    { icon: <FaGithub size={24} />, url: 'https://github.com/Rinvinvin', label: 'GitHub' },
-    { icon: <FaInstagram size={24} />, url: 'https://www.instagram.com/vinnbon/', label: 'Instagram' },
-    { icon: <FaLinkedin size={24} />, url: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
+    { icon: <FaTiktok size={24} />, url: 'https://www.tiktok.com/@chuchipr7', label: 'TikTok' },
+    { icon: <FaGithub size={24} />, url: 'https://github.com/ChuchiPr', label: 'GitHub' },
+    { icon: <FaInstagram size={24} />, url: 'https://www.instagram.com/chuchi0015/', label: 'Instagram' },
+    { icon: <FaLinkedin size={24} />, url: 'https://www.linkedin.com/in/mario-mu%C3%B1oz-928338347/', label: 'LinkedIn' },
   ]
 
   const containerVariants = {
@@ -47,14 +47,14 @@ export default function Contact() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="flex-1 p-6 bg-gray-50 overflow-hidden"
+        className="flex-1 p-6 overflow-hidden"
       >
-        <section className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-6">
+        <section className="max-w-4xl mx-auto border-2 border-blue-700 bg-neutral-950/80 rounded-2xl shadow-lg p-6">
           <motion.h2 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl font-bold text-violet-700 mb-6"
+            className="text-3xl font-bold text-blue-700 mb-6"
           >
             Contacto
           </motion.h2>
@@ -74,7 +74,7 @@ export default function Contact() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
                     >
-                      <label htmlFor={field} className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor={field} className="block text-sm font-medium text-gray-300 mb-1">
                         {field === 'nombre' ? 'Nombre' : 'Email'}
                       </label>
                       <input
@@ -84,7 +84,7 @@ export default function Contact() {
                         value={formData[field as keyof typeof formData]}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-violet-500 focus:ring-1 focus:ring-violet-500"
+                        className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
                       />
                     </motion.div>
                   ))}
@@ -93,7 +93,7 @@ export default function Contact() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.2 }}
                   >
-                    <label htmlFor="mensaje" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="mensaje" className="block text-sm font-medium text-gray-300 mb-1">
                       Mensaje
                     </label>
                     <textarea
@@ -103,7 +103,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       rows={4}
-                      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-violet-500 focus:ring-1 focus:ring-violet-500"
+                      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
                     />
                   </motion.div>
                   <motion.button
@@ -113,7 +113,7 @@ export default function Contact() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3, delay: 0.3 }}
-                    className="w-full py-2 px-4 bg-violet-700 hover:bg-violet-800 text-white rounded-lg transition-colors duration-300"
+                    className="w-full py-2 px-4 bg-blue-700 hover:bg-blue-800 text-white rounded-lg transition-colors duration-300"
                   >
                     Enviar Mensaje
                   </motion.button>
@@ -123,9 +123,9 @@ export default function Contact() {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="space-y-6"
+                className="space-y-6 "
               >
-                <h3 className="text-xl font-semibold text-gray-800">Redes Sociales</h3>
+                <h3 className="text-xl font-semibold text-blue-700">Redes Sociales</h3>
                 <div className="space-y-4">
                   {socialLinks.map((link, index) => (
                     <motion.a
@@ -137,7 +137,7 @@ export default function Contact() {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg text-gray-700 hover:text-violet-700 transition-colors duration-300"
+                      className="flex items-center gap-3 p-4 rounded-lg text-white hover:text-blue-700 transition-colors duration-300 border-2 border-blue-700"
                     >
                       {link.icon}
                       <span className="font-medium">{link.label}</span>
