@@ -14,21 +14,26 @@ const MatrixEffect: React.FC = () => {
     const rows = canvas.height = window.innerHeight;
 
     const characters = 'ChuchiPG882KPG20';
-    const fontSize = 16;
-    const columnsCount = Number(columns) / fontSize;
+        const fontSize = 16;
+    const columnsCount = Number(columns); 
 
     if (isNaN(columnsCount) || columnsCount <= 0) {
     throw new Error("columnsCount no es un número válido");
     }
 
-    const drops: number[] = Array.from({ length: Math.floor(columnsCount) }).fill(0);
+    const drops: number[] = Array.from({ length: Math.floor(columnsCount / fontSize) }, () => 0);
+
 
 
 
     function drawMatrix() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'; 
-        ctx.fillRect(0, 0, columns, rows);
+        if (!ctx) {
+            console.error("El contexto del canvas es null");
+            return;
+        }
         
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillRect(0, 0, columns, rows);
         ctx.fillStyle = '#1447e6'; 
         ctx.font = `${fontSize}px monospace`;
 
