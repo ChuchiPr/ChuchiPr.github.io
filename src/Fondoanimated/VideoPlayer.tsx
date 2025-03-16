@@ -15,8 +15,14 @@ const MatrixEffect: React.FC = () => {
 
     const characters = 'ChuchiPG882KPG20';
     const fontSize = 16;
-    const columnsCount = Number(columns) / fontSize; 
-    const drops: number[] = Array.from({ length: columnsCount as number }).fill(0);
+    const columnsCount = Number(columns) / fontSize;
+
+    if (isNaN(columnsCount) || columnsCount <= 0) {
+    throw new Error("columnsCount no es un número válido");
+    }
+
+    const drops: number[] = Array.from({ length: Math.floor(columnsCount) }).fill(0);
+
 
 
     function drawMatrix() {
